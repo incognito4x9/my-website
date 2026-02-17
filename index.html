@@ -3,142 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Modern Website</title>
+    <title>My Professional Website</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            scroll-behavior: smooth;
         }
         header {
             position: sticky;
             top: 0;
-            background: linear-gradient(to right, #ff5f6d, #ffc371);
-            padding: 15px;
+            background: #333;
             color: white;
+            padding: 10px 0;
             text-align: center;
-            box-shadow: 0 4px 2px -2px gray;
         }
-        section {
-            padding: 50px 20px;
-            text-align: center;
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
         }
         .hero {
-            background: linear-gradient(to bottom, #ff7e5f, #feb47b);
-            color: white;
-            padding: 100px 20px;
-        }
-        .services {
+            background: url('hero-image.jpg') no-repeat center center/cover;
+            height: 300px;
             display: flex;
+            align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .about, .services, .gallery, .contact {
+            padding: 20px;
+            text-align: center;
         }
         .service-card {
-            background: white;
-            border-radius: 10px;
+            display: inline-block;
+            width: 30%;
+            margin: 1.5%;
             padding: 20px;
-            margin: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
-        }
-        .service-card:hover {
-            transform: scale(1.05);
+            background: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .gallery img {
-            width: 100%;
+            width: 32%;
+            margin: 1%;
             border-radius: 8px;
-        }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
         }
         form {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            margin: 20px 0;
+            max-width: 300px;
+            margin: auto;
         }
         input, textarea {
+            margin-bottom: 10px;
             padding: 10px;
-            margin: 5px;
-            border-radius: 5px;
             border: 1px solid #ccc;
-            width: 80%;
+            border-radius: 4px;
         }
-        button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background: #ff5f6d;
+        footer {
+            background: #333;
             color: white;
-            cursor: pointer;
+            text-align: center;
+            padding: 10px 0;
         }
-        button:hover {
-            background: #ffc371;
-        }
+        .hidden { display: none; }
     </style>
 </head>
 <body>
     <header>
-        <h1>My Modern Website</h1>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
-    <section class="hero">
-        <h2>Welcome to Our Website!</h2>
-        <p>Discover our amazing services and features!</p>
+    <section class="hero" id="hero">
+        <h1>Welcome to My Website</h1>
     </section>
-    <section>
+    <section class="about" id="about">
         <h2>About Us</h2>
-        <p>We are dedicated to providing the best services to our clients.</p>
+        <p>This is a professional website showcasing our services.</p>
     </section>
-    <section class="services">
+    <section class="services" id="services">
         <h2>Our Services</h2>
-        <div class="service-card">
-            <h3>Service 1</h3>
-            <p>Description of service 1.</p>
-        </div>
-        <div class="service-card">
-            <h3>Service 2</h3>
-            <p>Description of service 2.</p>
-        </div>
-        <div class="service-card">
-            <h3>Service 3</h3>
-            <p>Description of service 3.</p>
-        </div>
+        <div class="service-card">Service 1</div>
+        <div class="service-card">Service 2</div>
+        <div class="service-card">Service 3</div>
     </section>
-    <section>
-        <h2>Image Gallery</h2>
-        <div class="gallery">
-            <img src="https://via.placeholder.com/250" alt="Gallery Image 1">
-            <img src="https://via.placeholder.com/250" alt="Gallery Image 2">
-            <img src="https://via.placeholder.com/250" alt="Gallery Image 3">
-            <img src="https://via.placeholder.com/250" alt="Gallery Image 4">
-        </div>
+    <section class="gallery" id="gallery">
+        <h2>Gallery</h2>
+        <img src="image1.jpg" alt="Image 1">
+        <img src="image2.jpg" alt="Image 2">
+        <img src="image3.jpg" alt="Image 3">
     </section>
-    <section>
+    <section class="contact" id="contact">
         <h2>Contact Us</h2>
-        <form onsubmit="return validateForm()">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+            <div id="formResponse" class="hidden">Thank you for your message!</div>
         </form>
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                document.getElementById('formResponse').classList.remove('hidden');
+            });
+        </script>
     </section>
     <footer>
-        <p>&copy; 2026 My Modern Website. All rights reserved.</p>
+        <p>&copy; 2026 My Professional Website</p>
     </footer>
-    <script>
-        function validateForm() {
-            // Basic validation logic here
-            return true;
-        }
-    </script>
 </body>
 </html>
