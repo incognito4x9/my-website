@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Incognito</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0a0a0a;
+  color:#fff;
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* Custom Cursor */
+.cursor{
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  background:#d4af37;
+  position:fixed;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  box-shadow:0 0 20px #d4af37;
+  z-index:9999;
+}
+
+/* Preloader */
+#loader{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+#loader h1{
+  font-family:'Playfair Display',serif;
+  color:#d4af37;
+  letter-spacing:4px;
+  animation:blink 1s infinite;
+}
+@keyframes blink{
+  50%{opacity:0.4;}
+}
+
+/* Navbar */
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+header h2{
+  font-family:'Playfair Display',serif;
+  color:#d4af37;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:25px;
+  font-size:14px;
+}
+nav a:hover{color:#d4af37;}
+
+/* Hero */
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+}
+.hero h1{
+  font-size:60px;
+  font-family:'Playfair Display',serif;
+  color:#d4af37;
+}
+.hero span{
+  color:#fff;
+  border-right:2px solid #d4af37;
+  padding-right:5px;
+}
+
+/* Sections */
+.section{
+  padding:120px 8%;
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s;
+}
+.section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+.section h2{
+  text-align:center;
+  font-size:40px;
+  margin-bottom:50px;
+  font-family:'Playfair Display',serif;
+  color:#d4af37;
+}
+
+/* About */
+.about{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+  line-height:1.8;
+}
+.quote{
+  margin-top:25px;
+  padding:20px;
+  border-left:3px solid #d4af37;
+  font-style:italic;
+  color:#aaa;
+}
+
+/* Gallery */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+.gallery img{
+  width:100%;
+  border-radius:10px;
+  transition:0.5s;
+  filter:grayscale(100%);
+}
+.gallery img:hover{
+  transform:scale(1.05);
+  filter:grayscale(0%);
+}
+
+/* Contact */
+.contact{
+  text-align:center;
+}
+.contact a{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 30px;
+  background:#d4af37;
+  color:#000;
+  text-decoration:none;
+  border-radius:5px;
+}
+
+/* Footer */
+footer{
+  background:#000;
+  text-align:center;
+  padding:20px;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<div id="loader">
+  <h1>Incognito</h1>
+</div>
+
+<div class="cursor"></div>
+
+<header>
+  <h2>Incognito</h2>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h1>Incognito</h1>
+  <h2><span id="typing"></span></h2>
+</section>
+
+<section class="section" id="about">
+  <h2>About Me</h2>
+  <div class="about">
+    <p>मैं जीवन को गहराई से समझने में विश्वास रखता हूँ। स्वतंत्र सोच मेरी पहचान है।</p>
+
+    <div class="quote">
+      “जिस दिन तुमने अपने आप को स्वीकार कर लिया,
+      उसी दिन से तुम्हारी मुक्ति शुरू हो जाती है।” – Osho
+    </div>
+
+    <div class="quote">
+      “जीवन कोई समस्या नहीं है जिसे हल करना है,
+      बल्कि एक रहस्य है जिसे जीना है।” – Osho
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://i.ibb.co/ycGNR44G/IMG-20260218-102613.jpg">
+    <img src="https://i.ibb.co/ycGNR44G/IMG-20260218-102613.jpg">
+    <img src="https://i.ibb.co/ycGNR44G/IMG-20260218-102613.jpg">
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
+    <p>Email: officialsinha143@gmail.com</p>
+    <a href="mailto:officialsinha143@gmail.com">Send Email</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Incognito | All Rights Reserved
+</footer>
+
+<script>
+/* Preloader */
+window.addEventListener("load",()=>{
+  document.getElementById("loader").style.display="none";
+});
+
+/* Scroll Animation */
+const sections=document.querySelectorAll(".section");
+window.addEventListener("scroll",()=>{
+  sections.forEach(sec=>{
+    const top=sec.getBoundingClientRect().top;
+    if(top<window.innerHeight-100){
+      sec.classList.add("show");
+    }
+  });
+});
+
+/* Typing Effect */
+const text="Luxury • Mystery • Identity";
+let i=0;
+function typing(){
+  if(i<text.length){
+    document.getElementById("typing").innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(typing,80);
+  }
+}
+typing();
+
+/* Custom Cursor */
+const cursor=document.querySelector(".cursor");
+document.addEventListener("mousemove",(e)=>{
+  cursor.style.left=e.pageX+"px";
+  cursor.style.top=e.pageY+"px";
+});
+</script>
+
+</body>
+</html>
