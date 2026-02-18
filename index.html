@@ -228,4 +228,187 @@ function toggleMenu(){
 </script>
 
 </body>
+</html><!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Incognito</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#ffffff;
+  color:#111;
+}
+
+/* NAVBAR */
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  z-index:1000;
+}
+
+header h2{
+  font-family:'Playfair Display',serif;
+}
+
+.menu-icon{
+  width:30px;
+  cursor:pointer;
+}
+
+.menu-icon div{
+  height:3px;
+  background:#000;
+  margin:6px 0;
+}
+
+/* SIDE MENU */
+nav{
+  position:fixed;
+  top:0;
+  right:-260px;
+  width:260px;
+  height:100%;
+  background:#111;
+  display:flex;
+  flex-direction:column;
+  padding-top:100px;
+  transition:0.4s;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  padding:15px 30px;
+  border-bottom:1px solid #222;
+}
+
+nav.active{
+  right:0;
+}
+
+/* HERO */
+.hero{
+  height:60vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:36px;
+}
+
+/* SECTION */
+.section{
+  padding:100px 8%;
+  text-align:center;
+}
+
+.section h2{
+  font-family:'Playfair Display',serif;
+  margin-bottom:30px;
+}
+
+/* GALLERY */
+.gallery img{
+  width:300px;
+  border-radius:10px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 25px;
+  background:#000;
+  color:#fff;
+  text-decoration:none;
+  border-radius:5px;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:#000;
+  color:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>Incognito</h2>
+  <div class="menu-icon" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</header>
+
+<nav id="menu">
+  <a href="#notes">Notes</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  Welcome to Incognito
+</section>
+
+<!-- NOTES -->
+<section class="section" id="notes">
+  <h2>Premium Notes</h2>
+  <p>Complete exam-oriented notes उपलब्ध हैं।</p>
+  <h3>Price: ₹99</h3>
+  <p>UPI: yourupi@upi</p>
+  <a href="tel:9XXXXXXXXX" class="btn">Contact Now</a>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://i.ibb.co/ycGNR44G/IMG-20260218-102613.jpg">
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <h2>Contact</h2>
+  <p>Email: officialsinha143@gmail.com</p>
+  <a href="mailto:officialsinha143@gmail.com" class="btn">Send Email</a>
+</section>
+
+<footer>
+© 2026 Incognito | All Rights Reserved
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
 </html>
