@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Incognito</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#fff;
+  color:#111;
+  overflow-x:hidden;
+}
+
+/* Loader */
+#loader{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  transition:0.6s;
+}
+#loader h1{
+  color:#fff;
+  font-family:'Playfair Display',serif;
+  letter-spacing:4px;
+}
+
+/* Navbar */
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+header h2{
+  color:#fff;
+  font-family:'Playfair Display',serif;
+  letter-spacing:2px;
+  font-size:22px;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:30px;
+  font-size:14px;
+  transition:0.3s;
+}
+nav a:hover{opacity:0.6;}
+
+/* Hero */
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:0 20px;
+}
+.hero h1{
+  font-size:55px;
+  font-family:'Playfair Display',serif;
+  margin-bottom:20px;
+}
+.hero p{
+  max-width:600px;
+  color:#555;
+  font-size:16px;
+}
+
+/* Section */
+.section{
+  padding:120px 8%;
+  opacity:0;
+  transform:translateY(80px);
+  transition:1s;
+}
+.section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+.section h2{
+  text-align:center;
+  font-size:38px;
+  margin-bottom:50px;
+  font-family:'Playfair Display',serif;
+}
+
+/* Gallery */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+.gallery img{
+  width:100%;
+  border-radius:10px;
+  transition:0.5s;
+  filter:grayscale(100%);
+}
+.gallery img:hover{
+  transform:scale(1.05);
+  filter:grayscale(0%);
+}
+
+/* Contact */
+.contact-box{
+  max-width:600px;
+  margin:auto;
+  text-align:center;
+}
+.contact-box p{
+  margin-bottom:15px;
+}
+.contact-box a{
+  display:inline-block;
+  padding:12px 25px;
+  background:#000;
+  color:#fff;
+  text-decoration:none;
+  border-radius:5px;
+  transition:0.3s;
+}
+.contact-box a:hover{
+  background:#333;
+}
+
+/* Footer */
+footer{
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:25px;
+  margin-top:60px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero h1{font-size:32px;}
+  nav{display:none;}
+}
+</style>
+</head>
+
+<body>
+
+<div id="loader">
+  <h1>Incognito</h1>
+</div>
+
+<header>
+  <h2>Incognito</h2>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h1>Welcome to Incognito</h1>
+  <p>एक प्रीमियम ब्लैक & व्हाइट लक्ज़री डिज़ाइन वेबसाइट। Minimal, Elegant और Professional look के साथ।</p>
+</section>
+
+<section class="section" id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="friend.jpg" alt="Image 1">
+    <img src="image2.jpg" alt="Image 2">
+    <img src="image3.jpg" alt="Image 3">
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact</h2>
+  <div class="contact-box">
+    <p>संपर्क करने के लिए नीचे क्लिक करें</p>
+    <p><strong>Email:</strong> your@email.com</p>
+    <a href="mailto:your@email.com">Send Email</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Incognito | All Rights Reserved
+</footer>
+
+<script>
+window.addEventListener("load",()=>{
+  document.getElementById("loader").style.opacity="0";
+  setTimeout(()=>{
+    document.getElementById("loader").style.display="none";
+  },600);
+});
+
+const sections=document.querySelectorAll(".section");
+window.addEventListener("scroll",()=>{
+  sections.forEach(sec=>{
+    const top=sec.getBoundingClientRect().top;
+    if(top<window.innerHeight-100){
+      sec.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
