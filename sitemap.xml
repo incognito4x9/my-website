@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://incognito4x9.github.io/my-website/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- HP Exams -->
+  <url>
+    <loc>https://incognito4x9.github.io/my-website/hp-patwari.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://incognito4x9.github.io/my-website/hp-police.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://incognito4x9.github.io/my-website/hp-joa-it-2026.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- SSC -->
+  <url>
+    <loc>https://incognito4x9.github.io/my-website/ssc-gd-2026.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Railway -->
+  <url>
+    <loc>https://incognito4x9.github.io/my-website/railway-exams-2026.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Banking -->
+  <url>
+    <loc>https://incognito4x9.github.io/my-website/banking-jobs-2026.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Defence -->
+  <url>
+    <loc>https://incognito4x9.github.io/my-website/indian-army-defence-2026.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+</urlset>
