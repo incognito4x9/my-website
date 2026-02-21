@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HP & India Exam Alerts</title>
+
+<style>
+
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar{
+    background:#111;
+    color:#fff;
+    padding:12px 15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.navbar h2{
+    font-size:18px;
+}
+
+.menu-icon{
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* Breaking Bar */
+.breaking{
+    background:#d60000;
+    color:#fff;
+    padding:8px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* Header Section */
+.main-header{
+    text-align:center;
+    padding:25px 15px;
+    background:#f5f5f5;
+}
+
+.site-logo{
+    width:130px;
+    margin-bottom:15px;
+}
+
+.site-title{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.site-desc{
+    font-size:15px;
+    color:#444;
+    margin-bottom:10px;
+}
+
+.update{
+    font-size:14px;
+    color:#666;
+    margin-top:5px;
+}
+
+/* Categories */
+.categories{
+    padding:20px 15px;
+}
+
+.categories h3{
+    text-align:center;
+    margin-bottom:15px;
+    font-size:20px;
+}
+
+.category-box{
+    background:#ffffff;
+    padding:15px;
+    margin-bottom:12px;
+    border-radius:8px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    text-align:center;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.category-box:hover{
+    background:#f0f0f0;
+}
+
+/* Footer */
+.footer{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
+    font-size:14px;
+}
+
+/* Responsive */
+@media(max-width:600px){
+    .site-title{
+        font-size:18px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h2>HP & India Exam Alerts</h2>
+    <div class="menu-icon">☰</div>
+</div>
+
+<!-- Breaking News -->
+<div class="breaking">
+    🔥 Latest HP Police & Govt Jobs Updates 2026
+</div>
+
+<!-- Header Section -->
+<header class="main-header">
+    <img src="logo.png" alt="HP Logo" class="site-logo">
+
+    <h1 class="site-title">
+        HP Govt Jobs 2026 | Latest Himachal Pradesh & Central Govt Jobs
+    </h1>
+
+    <p class="site-desc">
+        यह प्लेटफॉर्म Himachal Pradesh और All India Government Exams की नवीनतम जानकारी प्रदान करता है।
+    </p>
+
+    <div class="update">
+        Last Updated: 21 February 2026 <br>
+        Time: <span id="time"></span>
+    </div>
+</header>
+
+<!-- Categories -->
+<section class="categories">
+    <h3>📚 Exam Categories</h3>
+
+    <div class="category-box">HPPSC Jobs</div>
+    <div class="category-box">HP Police</div>
+    <div class="category-box">HP TET</div>
+    <div class="category-box">Central Govt Jobs</div>
+    <div class="category-box">Bank Jobs</div>
+    <div class="category-box">Railway Jobs</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    © 2026 HP & India Exam Alerts | All Rights Reserved
+</footer>
+
+<script>
+function updateTime(){
+    const now = new Date();
+    document.getElementById("time").innerHTML = now.toLocaleTimeString();
+}
+setInterval(updateTime,1000);
+updateTime();
+</script>
+
+</body>
+</html>
