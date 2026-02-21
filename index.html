@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+se<!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
@@ -258,7 +258,19 @@ HP & India Exam Alerts एक शैक्षिक सूचना प्ले
 <p>📩 Email: officialsinha143@gmail.com</p>
 <p>📞 Phone: 9317113520</p>
 <p>© 2026 HP Govt Jobs Portal</p>
-</footer>
+</footer><script>
+var today = new Date();
+
+var optionsEN = { day: 'numeric', month: 'long', year: 'numeric' };
+var dateEN = today.toLocaleDateString("en-IN", optionsEN);
+
+var optionsHI = { day: 'numeric', month: 'long', year: 'numeric' };
+var dateHI = today.toLocaleDateString("hi-IN", optionsHI);
+
+document.getElementById("date").innerHTML =
+"📅 Last Updated: " + dateEN +
+"<br>📅 अंतिम अपडेट: " + dateHI;
+</script>
 
 </body>
 </html>
